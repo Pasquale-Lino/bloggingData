@@ -1,12 +1,11 @@
 package pasquale.alberico.bloggingData.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -24,4 +23,8 @@ public class Author {
     private String cognome;
     private String email;
     private String avatar;
+
+    @JsonIgnore // <-----------
+    @OneToMany(mappedBy="author")
+    private List<BlogPost> posts;
 }

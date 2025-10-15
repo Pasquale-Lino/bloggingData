@@ -23,7 +23,7 @@ public class BlogPostController {
     }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public BlogPost create (@RequestParam BlogPostPayload payload){
+    public BlogPost create (@RequestBody BlogPostPayload payload){
         return blogPostService.create(payload);
     }
     @DeleteMapping("/{id}")

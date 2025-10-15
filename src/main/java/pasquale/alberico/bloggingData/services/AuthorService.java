@@ -26,6 +26,7 @@ public class AuthorService {
     }
 
     public Author save(AuthorPayload payload) {
+        
         Author author = new Author();
         author.setNome(payload.getNome());
         author.setCognome(payload.getCognome());
